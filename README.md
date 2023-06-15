@@ -1,2 +1,1 @@
-# EuiYeonKim.github.io
-asdasd
+# Style Control VALL-E Demo
