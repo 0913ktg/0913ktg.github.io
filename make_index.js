@@ -10,7 +10,7 @@ const template = `
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Directory Table</title>
+  <title>Style Control VALL-E Demo</title>
   <style>
     table {
       border-collapse: collapse;
@@ -29,9 +29,11 @@ const template = `
     <tr>
       <th>Speaker ID</th>
       <th>text</th>
-      <th>Model 1</th>
-      <th>Model 2</th>
-      <th>Model 3</th>
+      <th>Reference Audio</th>
+      <th>Style Control VALL-E (proposed)</th>
+      <th>VALL-E (base)</th>
+      <th>GST Tacotron2</th>
+      <th>VAE Tacotron2</th>
     </tr>
     {{rows}}
   </table>
