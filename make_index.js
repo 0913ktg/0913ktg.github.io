@@ -25,10 +25,11 @@ const template = `
   </style>
 </head>
 <body>
+  <h1>Style Control VALL-E Demo</h1>
   <table>
     <tr>
       <th>Speaker ID</th>
-      <th>text</th>
+      <th>Sentence</th>
       <th>Reference Audio</th>
       <th>Style Control VALL-E (proposed)</th>
       <th>VALL-E (base)</th>
@@ -44,7 +45,7 @@ const template = `
 // speaker id 목록 가져오기
 function getSpeakerIds(directoryPath) {
   const files = fs.readdirSync(directoryPath);
-  return files.map(file => path.basename(file, path.extname(file)));
+  return files.map(file => path.basename(file, path.extname(file)))
 }
 
 // 파일 읽기
@@ -81,7 +82,11 @@ function getAudioFiles(speakerId) {
 
 // index.html 생성
 function createIndexHtml() {
-  const speakerIds = getSpeakerIds(textDirectory);
+  const speakerIds = getSpeakerIds(textDirectory)
+  speakerIds.sort((a, b) => {
+
+    return parseInt(a.replace('speaker', '')) - parseInt(b.replace('speaker', ''))
+  });
   const rows = speakerIds.map(speakerId => createRow(speakerId)).join('');
   const html = template.replace('{{rows}}', rows);
   fs.writeFileSync('index.html', html);
