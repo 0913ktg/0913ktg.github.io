@@ -1,5 +1,6 @@
 # Style Control VALL-E Demo
 - enhuiz의 non-official VALL-E source code를 사용해 한국어 공개 데이터를 사용하여 학습한 모델의 추론 결과
+- https://github.com/enhuiz/vall-e
 - 기본 VALL-E와 Style token을 추가한 Style Control VALL-E 두 모델을 학습
   
 ## 학습 데이터
